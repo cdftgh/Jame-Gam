@@ -4,9 +4,13 @@ from pygame import mixer
 mixer.init()
 pygame.init()
 
+mixer.Channel(0).set_volume(0.3)
+
 class TitleScreen:
     screen = pygame.display.set_mode((804, 680))
     clock = pygame.time.Clock()
+
+    mixer.Channel(0).play(mixer.Sound(r"game\sounds\bg_music.mp3"), -1)
 
     bg_pic = pygame.image.load(r'game\images\bg.png')
 
